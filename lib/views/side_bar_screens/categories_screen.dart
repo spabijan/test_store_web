@@ -1,7 +1,7 @@
-import 'dart:typed_data';
-
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:test_store_web/controllers/category_controller.dart';
 
 class CategoriesScreen extends StatefulWidget {
   const CategoriesScreen({super.key});
@@ -112,7 +112,13 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
   }
 
   void _onFormSubmit() {
-    if (_formKey.currentState!.validate()) {}
+    if (_formKey.currentState!.validate()) {
+      GetIt.I<CategoryController>().uploadCategory(
+          pickedImage: _image,
+          pickedBanner: _banner,
+          name: _categoryName,
+          context: context);
+    }
   }
 
   String? _validateNewCategoryName(value) {
