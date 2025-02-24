@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:test_store_web/utils/get_it_utils.dart';
+import 'package:provider/provider.dart';
+import 'package:test_store_web/controllers/banners_screen_view_model.dart';
+import 'package:test_store_web/controllers/category_screen_view_model.dart';
 import 'package:test_store_web/views/main_screen.dart';
 
 void main() {
-  GetItUtils.getitSetup();
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (_) => BannersScreenViewModel()),
+    ChangeNotifierProvider(create: (_) => CategoryScreenViewModel())
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
