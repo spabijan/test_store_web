@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:test_store_web/models/banner.dart';
+import 'package:test_store_web/models/banner/banner.dart';
 
 class BannerViewModel {
   final BannerModel _bannerModel;

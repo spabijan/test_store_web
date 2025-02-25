@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test_store_web/controllers/category_screen_view_model.dart';
-import 'package:test_store_web/controllers/category_view_model.dart';
+import 'package:test_store_web/models/category/category_view_model.dart';
 import 'package:test_store_web/views/widgets/category_widget.dart';
 
 class CategoryListWidget extends StatelessWidget {

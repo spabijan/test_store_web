@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:cloudinary_public/cloudinary_public.dart';
 import 'package:flutter/material.dart';
 import 'package:test_store_web/constants/global_variables.dart';
-import 'package:test_store_web/models/category.dart';
+import 'package:test_store_web/models/category/category.dart';
 import 'package:test_store_web/services/manage_http_responses.dart';
 
 import "package:http/http.dart" as http;
@@ -48,7 +48,6 @@ final class CategoryScreenViewModel extends ChangeNotifier {
           response: postCategoryResponse);
     } catch (e) {
       error = e.toString();
-      notifyListeners();
       rethrow;
     } finally {
       isSending = false;
@@ -69,10 +68,8 @@ final class CategoryScreenViewModel extends ChangeNotifier {
 
       List<dynamic> data = jsonDecode(response.body);
       _categories = [for (final datum in data) CategoryModel.fromJson(datum)];
-      notifyListeners();
     } catch (e) {
       error = e.toString();
-      notifyListeners();
       rethrow;
     } finally {
       isLoading = false;

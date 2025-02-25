@@ -1,4 +1,4 @@
-import 'package:test_store_web/models/category.dart';
+import 'package:test_store_web/models/category/category.dart';
 
 class CategoryViewModel {
   final CategoryModel _categoryModel;

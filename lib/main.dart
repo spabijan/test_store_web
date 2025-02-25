@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test_store_web/controllers/banners_screen_view_model.dart';
 import 'package:test_store_web/controllers/category_screen_view_model.dart';
+import 'package:test_store_web/controllers/subcategory_screen_view_model.dart';
 import 'package:test_store_web/views/main_screen.dart';
 
 void main() {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (_) => BannersScreenViewModel()),
-    ChangeNotifierProvider(create: (_) => CategoryScreenViewModel())
+    ChangeNotifierProvider(create: (_) => CategoryScreenViewModel()),
+    ChangeNotifierProvider(create: (_) => SubcategoryScreenViewModel())
   ], child: const MyApp()));
 }
 

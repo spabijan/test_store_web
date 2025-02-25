@@ -6,6 +6,7 @@ import 'package:test_store_web/views/side_bar_screens/buyers_screen.dart';
 import 'package:test_store_web/views/side_bar_screens/categories_screen.dart';
 import 'package:test_store_web/views/side_bar_screens/orders_screen.dart';
 import 'package:test_store_web/views/side_bar_screens/products_screen.dart';
+import 'package:test_store_web/views/side_bar_screens/subcategory_screen.dart';
 import 'package:test_store_web/views/side_bar_screens/vendors_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -20,12 +21,13 @@ class _MainScreenState extends State<MainScreen> {
 
   void _screenSelector(item) {
     Widget newScreen = switch (item.route) {
-      BuyersScreen.routeName => BuyersScreen(),
-      VendorsScreen.routeName => VendorsScreen(),
-      OrdersScreen.routeName => OrdersScreen(),
-      CategoriesScreen.routeName => CategoriesScreen(),
-      BannerScreen.routeName => BannerScreen(),
-      ProductsScreen.routeName => ProductsScreen(),
+      BuyersScreen.routeName => const BuyersScreen(),
+      VendorsScreen.routeName => const VendorsScreen(),
+      OrdersScreen.routeName => const OrdersScreen(),
+      CategoriesScreen.routeName => const CategoriesScreen(),
+      BannerScreen.routeName => const BannerScreen(),
+      ProductsScreen.routeName => const ProductsScreen(),
+      SubcategoryScreen.routeName => const SubcategoryScreen(),
       _ => throw UnimplementedError()
     };
 
@@ -70,6 +72,10 @@ class _MainScreenState extends State<MainScreen> {
               title: "Categories",
               route: CategoriesScreen.routeName,
               icon: Icons.category),
+          AdminMenuItem(
+              title: "Subcategories",
+              route: SubcategoryScreen.routeName,
+              icon: Icons.category_outlined),
           AdminMenuItem(
               title: "Upload Banner",
               route: BannerScreen.routeName,

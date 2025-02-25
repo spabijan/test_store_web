@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_store_web/controllers/category_view_model.dart';
+import 'package:test_store_web/models/category/category_view_model.dart';
 
 class CategoryWidget extends StatelessWidget {
   const CategoryWidget({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_store_web/controllers/banner_view_model.dart';
+import 'package:test_store_web/models/banner/banner_view_model.dart';
 
 class BannerWidget extends StatelessWidget {
   const BannerWidget({super.key});
