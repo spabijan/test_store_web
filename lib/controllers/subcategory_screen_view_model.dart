@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:cloudinary_public/cloudinary_public.dart';
 import 'package:flutter/material.dart';
 import 'package:test_store_web/constants/global_variables.dart';
+import 'package:test_store_web/errors/http_error.dart';
 import 'package:test_store_web/models/category/category.dart';
 import 'package:test_store_web/models/subcategory/subcategory.dart';
 import "package:http/http.dart" as http;
@@ -67,7 +68,7 @@ final class SubcategoryScreenViewModel extends ChangeNotifier {
 
       var newSubcategory = SubcategoryModel(
           categoryId: _selectedCategory!.id,
-          categoryName: subcategoryName,
+          categoryName: _selectedCategory!.name,
           categoryImage: imageUrl.secureUrl,
           subcategoryName: subcategoryName);
 
@@ -83,6 +84,7 @@ final class SubcategoryScreenViewModel extends ChangeNotifier {
     } finally {
       isSending = false;
       notifyListeners();
+      loadsubCategories();
     }
   }
 
@@ -103,9 +105,10 @@ final class SubcategoryScreenViewModel extends ChangeNotifier {
           SubcategoryViewModel(
               subcategoryModel: SubcategoryModel.fromJson(datum))
       ];
+    } on HttpError catch (e) {
+      error = e.message;
     } catch (e) {
       error = e.toString();
-      rethrow;
     } finally {
       isLoading = false;
       notifyListeners();

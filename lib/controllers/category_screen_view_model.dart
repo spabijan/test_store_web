@@ -52,6 +52,7 @@ final class CategoryScreenViewModel extends ChangeNotifier {
     } finally {
       isSending = false;
       notifyListeners();
+      loadCategories();
     }
   }
 
