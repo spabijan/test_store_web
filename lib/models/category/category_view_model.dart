@@ -9,4 +9,5 @@ class CategoryViewModel {
   String get name => _categoryModel.name;
   String get image => _categoryModel.image;
   String get banner => _categoryModel.banner;
+  String get id => _categoryModel.id;
 }

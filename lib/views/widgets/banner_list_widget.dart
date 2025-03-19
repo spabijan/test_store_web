@@ -21,7 +21,7 @@ class BannerListWidget extends StatelessWidget {
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 6, crossAxisSpacing: 8, mainAxisSpacing: 8),
           itemBuilder: (context, index) => Provider(
-              create: (_) => BannerViewModel(bannerModel: vm.bannerList[index]),
+              create: (_) => vm.bannerList[index],
               child: const BannerWidget()));
     }
     return Center(child: Text("No banners ${vm.error}"));

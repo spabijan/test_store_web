@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:test_store_web/controllers/category_screen_view_model.dart';
 import 'package:test_store_web/controllers/subcategory_screen_view_model.dart';
 import 'package:test_store_web/models/category/category.dart';
+import 'package:test_store_web/models/category/category_view_model.dart';
 import 'package:test_store_web/views/widgets/pick_image_widget.dart';
 import 'package:test_store_web/views/widgets/subcategory_list_widget.dart';
 
@@ -55,7 +56,7 @@ class _SubcategoryScreenState extends State<SubcategoryScreen> {
                 else if (categoriesVM.categoriesList.isEmpty)
                   Center(child: Text('No categories'))
                 else
-                  DropdownButtonFormField<CategoryModel>(
+                  DropdownButtonFormField<CategoryViewModel>(
                       validator: (value) {
                         if (value == null) {
                           return 'Select category';

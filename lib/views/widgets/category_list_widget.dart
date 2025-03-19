@@ -24,8 +24,7 @@ class CategoryListWidget extends StatelessWidget {
           crossAxisCount: 6, mainAxisSpacing: 8, crossAxisSpacing: 8),
       itemCount: vm.categoriesList.length,
       itemBuilder: (BuildContext context, int index) => Provider(
-          create: (_) =>
-              CategoryViewModel(categoryModel: vm.categoriesList[index]),
+          create: (_) => vm.categoriesList[index],
           child: const CategoryWidget()),
     );
   }

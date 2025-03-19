@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:test_store_web/constants/global_variables.dart';
 import 'package:test_store_web/models/banner/banner.dart';
 import "package:http/http.dart" as http;
+import 'package:test_store_web/models/banner/banner_view_model.dart';
 import 'dart:convert';
 
 import 'package:test_store_web/services/manage_http_responses.dart';
@@ -13,8 +14,8 @@ final class BannersScreenViewModel extends ChangeNotifier {
   bool isloading = false;
   bool isSending = false;
   String error = '';
-  List<BannerModel> _banners = [];
-  UnmodifiableListView<BannerModel> get bannerList =>
+  List<BannerViewModel> _banners = [];
+  UnmodifiableListView<BannerViewModel> get bannerList =>
       UnmodifiableListView(_banners);
 
   Future<void> uploadBanner({required dynamic pickedImage}) async {
@@ -58,7 +59,10 @@ final class BannersScreenViewModel extends ChangeNotifier {
       HttpResponseUtils.checkForHttpResponseErrors(response: response);
 
       List<dynamic> data = jsonDecode(response.body);
-      _banners = [for (final datum in data) BannerModel.fromJson(datum)];
+      _banners = [
+        for (final datum in data)
+          BannerViewModel(bannerModel: BannerModel.fromJson(datum))
+      ];
       notifyListeners();
     } catch (e) {
       error = e.toString();

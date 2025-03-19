@@ -6,20 +6,21 @@ import 'package:flutter/material.dart';
 import 'package:test_store_web/constants/global_variables.dart';
 import 'package:test_store_web/errors/http_error.dart';
 import 'package:test_store_web/models/category/category.dart';
+import 'package:test_store_web/models/category/category_view_model.dart';
 import 'package:test_store_web/models/subcategory/subcategory.dart';
 import "package:http/http.dart" as http;
 import 'package:test_store_web/models/subcategory/subcategory_view_model.dart';
 import 'package:test_store_web/services/manage_http_responses.dart';
 
 final class SubcategoryScreenViewModel extends ChangeNotifier {
-  CategoryModel? _selectedCategory;
+  CategoryViewModel? _selectedCategory;
   String error = '';
   List<SubcategoryViewModel> _subcategories = List.empty(growable: true);
   UnmodifiableListView<SubcategoryViewModel> get subcategories =>
       UnmodifiableListView(_subcategories);
 
-  CategoryModel? get selectedCategory => _selectedCategory;
-  set selectedCategory(CategoryModel? newValue) {
+  CategoryViewModel? get selectedCategory => _selectedCategory;
+  set selectedCategory(CategoryViewModel? newValue) {
     _selectedCategory = newValue;
     notifyListeners();
   }

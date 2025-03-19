@@ -5,6 +5,7 @@ import 'package:cloudinary_public/cloudinary_public.dart';
 import 'package:flutter/material.dart';
 import 'package:test_store_web/constants/global_variables.dart';
 import 'package:test_store_web/models/category/category.dart';
+import 'package:test_store_web/models/category/category_view_model.dart';
 import 'package:test_store_web/services/manage_http_responses.dart';
 
 import "package:http/http.dart" as http;
@@ -13,8 +14,8 @@ final class CategoryScreenViewModel extends ChangeNotifier {
   bool isSending = false;
   bool isLoading = false;
   String error = '';
-  List<CategoryModel> _categories = List.empty(growable: true);
-  UnmodifiableListView<CategoryModel> get categoriesList =>
+  List<CategoryViewModel> _categories = List.empty(growable: true);
+  UnmodifiableListView<CategoryViewModel> get categoriesList =>
       UnmodifiableListView(_categories);
 
   Future<void> uploadCategory(
@@ -68,7 +69,10 @@ final class CategoryScreenViewModel extends ChangeNotifier {
       HttpResponseUtils.checkForHttpResponseErrors(response: response);
 
       List<dynamic> data = jsonDecode(response.body);
-      _categories = [for (final datum in data) CategoryModel.fromJson(datum)];
+      _categories = [
+        for (final datum in data)
+          CategoryViewModel(categoryModel: CategoryModel.fromJson(datum))
+      ];
     } catch (e) {
       error = e.toString();
       rethrow;
