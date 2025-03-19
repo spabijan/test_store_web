@@ -23,6 +23,6 @@ class BuyerListWidget extends StatelessWidget {
         },
       );
     }
-    return Container();
+    return Center(child: Text('No users'));
   }
 }

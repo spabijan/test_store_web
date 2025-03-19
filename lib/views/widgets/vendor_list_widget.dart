@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_store_web/controllers/buyers_screen_view_model.dart';
 import 'package:test_store_web/controllers/vendors_screen_view_model.dart';
-import 'package:test_store_web/views/widgets/buyer_widget.dart';
 import 'package:test_store_web/views/widgets/vendor_widget.dart';
 
 class VendorListWidget extends StatelessWidget {

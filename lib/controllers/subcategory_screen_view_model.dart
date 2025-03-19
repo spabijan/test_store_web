@@ -5,7 +5,6 @@ import 'package:cloudinary_public/cloudinary_public.dart';
 import 'package:flutter/material.dart';
 import 'package:test_store_web/constants/global_variables.dart';
 import 'package:test_store_web/errors/http_error.dart';
-import 'package:test_store_web/models/category/category.dart';
 import 'package:test_store_web/models/category/category_view_model.dart';
 import 'package:test_store_web/models/subcategory/subcategory.dart';
 import "package:http/http.dart" as http;

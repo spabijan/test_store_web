@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:test_store_web/controllers/buyers_screen_view_model.dart';
-import 'package:test_store_web/controllers/category_screen_view_model.dart';
 import 'package:test_store_web/views/widgets/buyer_list_widget.dart';
 import 'package:test_store_web/views/widgets/header_row.dart';
 

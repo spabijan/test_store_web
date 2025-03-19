@@ -32,7 +32,7 @@ class _VendorsScreenState extends State<VendorsScreen> {
         children: [
           Container(
             alignment: Alignment.topLeft,
-            child: Text('Manage buyers',
+            child: Text('Manage vendors',
                 style: GoogleFonts.montserrat(
                     fontSize: 22, fontWeight: FontWeight.bold)),
           ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:test_store_web/models/users/user_view_model.dart';
 import 'package:test_store_web/models/vendor/vendor_view_model.dart';
 import 'package:test_store_web/views/widgets/header_row.dart';
 
