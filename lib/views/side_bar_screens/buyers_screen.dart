@@ -1,10 +1,27 @@
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:test_store_web/controllers/buyers_screen_view_model.dart';
+import 'package:test_store_web/controllers/category_screen_view_model.dart';
+import 'package:test_store_web/views/widgets/buyer_list_widget.dart';
 import 'package:test_store_web/views/widgets/header_row.dart';
 
-class BuyersScreen extends StatelessWidget {
+class BuyersScreen extends StatefulWidget {
   const BuyersScreen({super.key});
   static const String routeName = '/buyerscreen';
+
+  @override
+  State<BuyersScreen> createState() => _BuyersScreenState();
+}
+
+class _BuyersScreenState extends State<BuyersScreen> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Provider.of<BuyersScreenViewModel>(context, listen: false).loadUsers();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +48,8 @@ class BuyersScreen extends StatelessWidget {
               HeaderRow(flex: 2, text: 'Address'),
               HeaderRow(flex: 2, text: 'Delete'),
             ],
-          )
+          ),
+          BuyerListWidget()
         ],
       )),
     );
