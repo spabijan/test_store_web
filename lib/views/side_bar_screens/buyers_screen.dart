@@ -36,10 +36,8 @@ class _BuyersScreenState extends State<BuyersScreen> {
                 style: GoogleFonts.montserrat(
                     fontSize: 22, fontWeight: FontWeight.bold)),
           ),
-          SizedBox(
-            height: 16,
-          ),
-          Row(
+          const SizedBox(height: 16),
+          const Row(
             children: [
               HeaderRow(flex: 1, text: 'Image'),
               HeaderRow(flex: 3, text: 'Full Name'),
@@ -48,7 +46,7 @@ class _BuyersScreenState extends State<BuyersScreen> {
               HeaderRow(flex: 2, text: 'Delete'),
             ],
           ),
-          BuyerListWidget()
+          const BuyerListWidget()
         ],
       )),
     );

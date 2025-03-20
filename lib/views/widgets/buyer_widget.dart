@@ -15,7 +15,7 @@ class BuyerWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        UserTableRow(
+        ExpandableTableRow(
             flex: 1,
             widget: CircleAvatar(
                 child: Text(
@@ -25,22 +25,22 @@ class BuyerWidget extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 18),
             ))),
-        UserTableRow(
+        ExpandableTableRow(
             flex: 3,
             widget: Text(vm.fullName,
                 style:
                     GoogleFonts.montserrat(color: Colors.black, fontSize: 16))),
-        UserTableRow(
+        ExpandableTableRow(
             flex: 2,
             widget: Text(vm.email,
                 style:
                     GoogleFonts.montserrat(color: Colors.black, fontSize: 16))),
-        UserTableRow(
+        ExpandableTableRow(
             flex: 2,
             widget: Text(vm.address,
                 style:
                     GoogleFonts.montserrat(color: Colors.black, fontSize: 16))),
-        UserTableRow(
+        ExpandableTableRow(
             flex: 2,
             widget: TextButton(
               onPressed: () {},

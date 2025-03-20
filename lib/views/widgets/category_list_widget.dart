@@ -11,15 +11,15 @@ class CategoryListWidget extends StatelessWidget {
     var vm = context.watch<CategoryScreenViewModel>();
 
     if (vm.isLoading) {
-      return CircularProgressIndicator.adaptive();
+      return const CircularProgressIndicator.adaptive();
     } else if (vm.error.isNotEmpty) {
       return Center(child: Text('Error while loading categories: ${vm.error}'));
     } else if (vm.categoriesList.isEmpty) {
-      return Center(child: Text('No categories'));
+      return const Center(child: Text('No categories'));
     }
     return GridView.builder(
       shrinkWrap: true,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 6, mainAxisSpacing: 8, crossAxisSpacing: 8),
       itemCount: vm.categoriesList.length,
       itemBuilder: (BuildContext context, int index) => Provider(

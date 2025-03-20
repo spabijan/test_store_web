@@ -10,9 +10,9 @@ class VendorListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var vm = context.watch<VendorsScreenViewModel>();
     if (vm.isloading) {
-      return CircularProgressIndicator.adaptive();
+      return const CircularProgressIndicator.adaptive();
     } else if (vm.error.isNotEmpty) {
-      return Center(child: Text("Error ${vm.error}"));
+      return Center(child: Text('Error ${vm.error}'));
     } else if (vm.vendorsList.isNotEmpty) {
       return ListView.builder(
         itemCount: vm.vendorsList.length,
@@ -24,6 +24,6 @@ class VendorListWidget extends StatelessWidget {
         },
       );
     }
-    return Container();
+    return const Center(child: Text('No vendors'));
   }
 }

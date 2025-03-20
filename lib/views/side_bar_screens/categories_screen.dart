@@ -43,12 +43,12 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
             children: [
               Container(
                 alignment: Alignment.topLeft,
-                child: Text('Categories',
+                child: const Text('Categories',
                     style:
                         TextStyle(fontSize: 36, fontWeight: FontWeight.bold)),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
                 child: Divider(color: Colors.grey),
               ),
               Row(
@@ -64,27 +64,27 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                       onChanged: (value) => _categoryName = value,
                       validator: _validateNewCategoryName,
                       decoration:
-                          InputDecoration(labelText: 'Enter Category Name'),
+                          const InputDecoration(labelText: 'Enter Category Name'),
                     ),
                   ),
-                  TextButton(onPressed: () {}, child: Text('Cancel')),
+                  TextButton(onPressed: () {}, child: const Text('Cancel')),
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue),
                       onPressed: _onFormSubmit,
                       child: isSending
-                          ? CircularProgressIndicator.adaptive()
-                          : Text('Save',
+                          ? const CircularProgressIndicator.adaptive()
+                          : const Text('Save',
                               style: TextStyle(color: Colors.white))),
                 ],
               ),
-              Divider(color: Colors.grey),
+              const Divider(color: Colors.grey),
               PickImageWidget(
                   textDecoration: 'Category banner',
                   imageByteData: getBanner,
                   onPickImage: (image) => setState(() => _banner = image)),
-              Divider(color: Colors.grey),
-              CategoryListWidget()
+              const Divider(color: Colors.grey),
+              const CategoryListWidget()
             ],
           ),
         ),
@@ -109,7 +109,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                 context: context);
         if (mounted) {
           ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text('Uploaded category')));
+              .showSnackBar(const SnackBar(content: Text('Uploaded category')));
         }
       } on HttpError catch (e) {
         if (mounted) {

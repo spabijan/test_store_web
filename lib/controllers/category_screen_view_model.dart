@@ -8,7 +8,7 @@ import 'package:test_store_web/models/category/category.dart';
 import 'package:test_store_web/models/category/category_view_model.dart';
 import 'package:test_store_web/services/manage_http_responses.dart';
 
-import "package:http/http.dart" as http;
+import 'package:http/http.dart' as http;
 
 final class CategoryScreenViewModel extends ChangeNotifier {
   bool isSending = false;

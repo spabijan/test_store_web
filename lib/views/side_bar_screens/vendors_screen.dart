@@ -36,10 +36,10 @@ class _VendorsScreenState extends State<VendorsScreen> {
                 style: GoogleFonts.montserrat(
                     fontSize: 22, fontWeight: FontWeight.bold)),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
-          Row(
+          const Row(
             children: [
               HeaderRow(flex: 1, text: 'Image'),
               HeaderRow(flex: 3, text: 'Full Name'),
@@ -48,7 +48,7 @@ class _VendorsScreenState extends State<VendorsScreen> {
               HeaderRow(flex: 2, text: 'Delete'),
             ],
           ),
-          VendorListWidget()
+          const VendorListWidget()
         ],
       )),
     );

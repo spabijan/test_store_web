@@ -4,7 +4,7 @@ import 'package:cloudinary_public/cloudinary_public.dart';
 import 'package:flutter/material.dart';
 import 'package:test_store_web/constants/global_variables.dart';
 import 'package:test_store_web/models/banner/banner.dart';
-import "package:http/http.dart" as http;
+import 'package:http/http.dart' as http;
 import 'package:test_store_web/models/banner/banner_view_model.dart';
 import 'dart:convert';
 

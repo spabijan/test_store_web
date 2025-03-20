@@ -39,9 +39,9 @@ class _BannerScreenState extends State<BannerScreen> {
         alignment: Alignment.topLeft,
         child: Column(
           children: [
-            Text('Baners',
+            const Text('Baners',
                 style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold)),
-            Divider(color: Colors.grey),
+            const Divider(color: Colors.grey),
             Row(
               spacing: 16,
               children: [
@@ -54,12 +54,12 @@ class _BannerScreenState extends State<BannerScreen> {
                         ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                     onPressed: _onUploadBanner,
                     child: isSending
-                        ? CircularProgressIndicator.adaptive()
-                        : Text('Save', style: TextStyle(color: Colors.white))),
+                        ? const CircularProgressIndicator.adaptive()
+                        : const Text('Save', style: TextStyle(color: Colors.white))),
               ],
             ),
-            Divider(color: Colors.grey),
-            BannerListWidget()
+            const Divider(color: Colors.grey),
+            const BannerListWidget()
           ],
         ),
       ),
@@ -72,7 +72,7 @@ class _BannerScreenState extends State<BannerScreen> {
           .uploadBanner(pickedImage: _banner);
       if (mounted) {
         ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text('Uploaded banner')));
+            .showSnackBar(const SnackBar(content: Text('Uploaded banner')));
       }
     } on HttpError catch (e) {
       if (mounted) {

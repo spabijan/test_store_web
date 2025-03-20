@@ -1,9 +1,9 @@
 import 'package:test_store_web/models/users/user.dart';
 
 class UserViewModel {
-  final UserModel _model;
 
   UserViewModel({required UserModel model}) : _model = model;
+  final UserModel _model;
 
   String get fullName => _model.fullName;
   String get email => _model.email;

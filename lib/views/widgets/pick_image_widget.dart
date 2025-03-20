@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 
 class PickImageWidget extends StatelessWidget {
   const PickImageWidget(
-      {super.key,
-      required this.textDecoration,
-      this.imageByteData,
-      required this.onPickImage});
+      {required this.textDecoration, required this.onPickImage, super.key,
+      this.imageByteData});
 
   final String textDecoration;
   final dynamic imageByteData;
@@ -30,7 +28,7 @@ class PickImageWidget extends StatelessWidget {
         ElevatedButton(
           onPressed: () => _pickImage(onPickImage: onPickImage),
           style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-          child: Text("Pick Image", style: TextStyle(color: Colors.white)),
+          child: const Text('Pick Image', style: TextStyle(color: Colors.white)),
         )
       ],
     );

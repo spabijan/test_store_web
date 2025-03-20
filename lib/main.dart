@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:test_store_web/controllers/banners_screen_view_model.dart';
 import 'package:test_store_web/controllers/buyers_screen_view_model.dart';
 import 'package:test_store_web/controllers/category_screen_view_model.dart';
+import 'package:test_store_web/controllers/orders_screen_view_model.dart';
 import 'package:test_store_web/controllers/subcategory_screen_view_model.dart';
 import 'package:test_store_web/controllers/vendors_screen_view_model.dart';
 import 'package:test_store_web/views/main_screen.dart';
@@ -13,7 +14,8 @@ void main() {
     ChangeNotifierProvider(create: (_) => CategoryScreenViewModel()),
     ChangeNotifierProvider(create: (_) => SubcategoryScreenViewModel()),
     ChangeNotifierProvider(create: (_) => BuyersScreenViewModel()),
-    ChangeNotifierProvider(create: (_) => VendorsScreenViewModel())
+    ChangeNotifierProvider(create: (_) => VendorsScreenViewModel()),
+    ChangeNotifierProvider(create: (_) => OrdersScreenViewModel())
   ], child: const MyApp()));
 }
 

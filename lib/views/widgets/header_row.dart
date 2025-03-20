@@ -3,9 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class HeaderRow extends StatelessWidget {
   const HeaderRow({
-    super.key,
-    required this.flex,
-    required this.text,
+    required this.flex, required this.text, super.key,
   });
 
   final int flex;
@@ -13,23 +11,21 @@ class HeaderRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return UserTableRow(
+    return ExpandableTableRow(
       flex: flex,
       widget: Text(
         text,
         style: GoogleFonts.montserrat(
             fontWeight: FontWeight.bold, color: Colors.white, fontSize: 15),
       ),
-      color: Color(0xff3c55ef),
+      color: const Color(0xff3c55ef),
     );
   }
 }
 
-class UserTableRow extends StatelessWidget {
-  const UserTableRow({
-    super.key,
-    required this.flex,
-    required this.widget,
+class ExpandableTableRow extends StatelessWidget {
+  const ExpandableTableRow({
+    required this.flex, required this.widget, super.key,
     this.color = Colors.white,
   });
 
@@ -45,6 +41,6 @@ class UserTableRow extends StatelessWidget {
             decoration: BoxDecoration(
                 color: color, //Color(0xff3c55ef)
                 border: Border.all(color: Colors.grey.shade700)),
-            child: Padding(padding: EdgeInsets.all(8), child: widget)));
+            child: Padding(padding: const EdgeInsets.all(8), child: widget)));
   }
 }

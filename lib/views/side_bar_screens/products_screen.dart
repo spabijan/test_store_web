@@ -7,7 +7,7 @@ class ProductsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Products Screen"),
+      child: const Text('Products Screen'),
     );
   }
 }

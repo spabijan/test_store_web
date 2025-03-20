@@ -6,8 +6,7 @@ part 'banner.g.dart';
 @freezed
 class BannerModel with _$BannerModel {
   const factory BannerModel({
-    @JsonKey(name: '_id') @Default('') String id,
-    required final String image,
+    required final String image, @JsonKey(name: '_id') @Default('') String id,
   }) = _Banner;
 
   factory BannerModel.fromJson(Map<String, dynamic> json) =>

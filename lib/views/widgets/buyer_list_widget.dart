@@ -10,9 +10,9 @@ class BuyerListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var vm = context.watch<BuyersScreenViewModel>();
     if (vm.isloading) {
-      return CircularProgressIndicator.adaptive();
+      return const CircularProgressIndicator.adaptive();
     } else if (vm.error.isNotEmpty) {
-      return Center(child: Text("Error ${vm.error}"));
+      return Center(child: Text('Error ${vm.error}'));
     } else if (vm.userList.isNotEmpty) {
       return ListView.builder(
         itemCount: vm.userList.length,
@@ -23,6 +23,6 @@ class BuyerListWidget extends StatelessWidget {
         },
       );
     }
-    return Center(child: Text('No users'));
+    return const Center(child: Text('No users'));
   }
 }

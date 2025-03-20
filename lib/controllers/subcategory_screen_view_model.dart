@@ -7,7 +7,7 @@ import 'package:test_store_web/constants/global_variables.dart';
 import 'package:test_store_web/errors/http_error.dart';
 import 'package:test_store_web/models/category/category_view_model.dart';
 import 'package:test_store_web/models/subcategory/subcategory.dart';
-import "package:http/http.dart" as http;
+import 'package:http/http.dart' as http;
 import 'package:test_store_web/models/subcategory/subcategory_view_model.dart';
 import 'package:test_store_web/services/manage_http_responses.dart';
 
@@ -25,7 +25,7 @@ final class SubcategoryScreenViewModel extends ChangeNotifier {
   }
 
   dynamic _image;
-  get image => _image;
+  dynamic get image => _image;
   set image(newImage) {
     _image = newImage;
     notifyListeners();

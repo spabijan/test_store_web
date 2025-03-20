@@ -6,11 +6,7 @@ part 'subcategory.g.dart';
 @freezed
 class SubcategoryModel with _$SubcategoryModel {
   const factory SubcategoryModel(
-          {@JsonKey(name: '_id') @Default('') String id,
-          required String categoryId,
-          required String categoryName,
-          @JsonKey(name: 'image') required String categoryImage,
-          @JsonKey(name: 'subCategoryName') required String subcategoryName}) =
+          {required String categoryId, required String categoryName, @JsonKey(name: 'image') required String categoryImage, @JsonKey(name: 'subCategoryName') required String subcategoryName, @JsonKey(name: '_id') @Default('') String id}) =
       _SubcategoryModel;
 
   factory SubcategoryModel.fromJson(Map<String, dynamic> json) =>
